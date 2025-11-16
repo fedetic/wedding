@@ -21,7 +21,7 @@ const translations = {
             title: 'Onze Reis'
         },
         details: {
-            title: 'en nu is het tijd in het huwelijksbootje stappen!',
+            title: 'en nu tijd om in het huwelijksbootje stappen!',
             date: {
                 label: 'Datum',
                 value: 'Zaterdag 5 juni 2026'
@@ -407,6 +407,8 @@ document.addEventListener('DOMContentLoaded', function() {
         currentIndex: 0,
         autoAdvanceTimer: null,
         autoAdvanceDelay: 2500,
+        fastAdvanceDelay: 1000, // Faster speed for 4th photo
+        fastSlideIndex: 3, // Index of slide to advance quickly (4th slide)
 
         init() {
             if (!this.slideshow || this.slides.length === 0) return;
@@ -414,13 +416,13 @@ document.addEventListener('DOMContentLoaded', function() {
             this.createIndicators();
             this.setupEventListeners();
 
-            // Set initial position without resetting timer
+            // Set initial position
             this.currentIndex = 0;
             this.updateSlidePosition();
             this.updateIndicators();
 
-            // Start auto-advance only once
-            this.startAutoAdvance();
+            // Auto-advance will be started by Intersection Observer when carousel is visible
+            // This prevents issues with starting auto-advance before carousel is in viewport
         },
 
         createIndicators() {
@@ -436,10 +438,6 @@ document.addEventListener('DOMContentLoaded', function() {
             this.prevButton.addEventListener('click', () => this.previousSlide());
             this.nextButton.addEventListener('click', () => this.nextSlide());
 
-            // Pause auto-advance on hover
-            this.slideshow.addEventListener('mouseenter', () => this.stopAutoAdvance());
-            this.slideshow.addEventListener('mouseleave', () => this.startAutoAdvance());
-
             // Handle window resize
             window.addEventListener('resize', () => {
                 this.updateSlidePosition();
@@ -448,6 +446,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
             // Touch/swipe support
             this.setupTouchEvents();
+
+            // Setup visibility-based auto-advance
+            this.setupVisibilityObserver();
         },
 
         setupTouchEvents() {
@@ -468,6 +469,11 @@ document.addEventListener('DOMContentLoaded', function() {
                 touchEndX = e.changedTouches[0].screenX;
                 touchEndY = e.changedTouches[0].screenY;
                 this.handleSwipe(touchStartX, touchEndX, touchStartY, touchEndY);
+                this.startAutoAdvance();
+            }, { passive: true });
+
+            // Handle touchcancel to restart auto-advance if touch is interrupted
+            viewport.addEventListener('touchcancel', () => {
                 this.startAutoAdvance();
             }, { passive: true });
         },
@@ -533,11 +539,17 @@ document.addEventListener('DOMContentLoaded', function() {
 
         startAutoAdvance() {
             this.stopAutoAdvance();
-            console.log('Starting auto-advance with', this.autoAdvanceDelay, 'ms delay');
+
+            // Use faster delay for 4th photo (index 3), normal delay for all others
+            const delay = this.currentIndex === this.fastSlideIndex
+                ? this.fastAdvanceDelay
+                : this.autoAdvanceDelay;
+
+            console.log('Starting auto-advance with', delay, 'ms delay (index:', this.currentIndex, ')');
             this.autoAdvanceTimer = setInterval(() => {
                 console.log('Auto-advancing to next slide');
                 this.nextSlide();
-            }, this.autoAdvanceDelay);
+            }, delay);
         },
 
         stopAutoAdvance() {
@@ -550,6 +562,32 @@ document.addEventListener('DOMContentLoaded', function() {
         resetAutoAdvance() {
             this.stopAutoAdvance();
             this.startAutoAdvance();
+        },
+
+        setupVisibilityObserver() {
+            // Use Intersection Observer to pause/resume auto-advance based on visibility
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1 // Trigger when at least 10% of carousel is visible
+            };
+
+            const visibilityObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        // Carousel is visible, start auto-advance
+                        this.startAutoAdvance();
+                    } else {
+                        // Carousel is not visible, stop auto-advance to save resources
+                        this.stopAutoAdvance();
+                    }
+                });
+            }, observerOptions);
+
+            // Observe the slideshow container
+            if (this.slideshow) {
+                visibilityObserver.observe(this.slideshow);
+            }
         }
     };
 
