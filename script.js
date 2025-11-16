@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', function() {
             if (element) {
                 setTimeout(() => {
                     element.classList.add('show');
-                }, index * 1500); // 1.5 second delay between each message
+                }, index * 1200); // 1.2 second delay between each message
             }
         });
     }
