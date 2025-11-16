@@ -186,7 +186,10 @@ document.addEventListener('DOMContentLoaded', function() {
             this.slideshow.addEventListener('mouseleave', () => this.startAutoAdvance());
 
             // Handle window resize
-            window.addEventListener('resize', () => this.updateSlidePosition());
+            window.addEventListener('resize', () => {
+                this.updateSlidePosition();
+                this.updateIndicators();
+            });
         },
 
         goToSlide(index) {
@@ -204,8 +207,20 @@ document.addEventListener('DOMContentLoaded', function() {
 
         updateIndicators() {
             const indicators = this.indicatorsContainer.querySelectorAll('.slideshow-indicator');
+            const isMobile = window.innerWidth <= 768;
+
             indicators.forEach((indicator, index) => {
                 indicator.classList.toggle('active', index === this.currentIndex);
+
+                // On mobile, only show previous, current, and next indicators
+                if (isMobile) {
+                    const prevIndex = (this.currentIndex - 1 + this.slides.length) % this.slides.length;
+                    const nextIndex = (this.currentIndex + 1) % this.slides.length;
+                    const isVisible = index === this.currentIndex || index === prevIndex || index === nextIndex;
+                    indicator.classList.toggle('visible', isVisible);
+                } else {
+                    indicator.classList.add('visible');
+                }
             });
         },
 

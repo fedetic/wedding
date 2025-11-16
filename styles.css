@@ -375,7 +375,7 @@ h3 {
 
 /* Program Section */
 .program-section {
-    background-color: var(--white);
+    background-color: #faf8f5;
 }
 
 .timeline {
@@ -617,6 +617,11 @@ footer p {
         width: 50px;
         height: 50px;
         font-size: 1.3rem;
+    }
+
+    /* Hide non-visible indicators on mobile */
+    .slideshow-indicator:not(.visible) {
+        display: none;
     }
 }
 
