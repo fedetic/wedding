@@ -1,5 +1,260 @@
+// Language Translations
+const translations = {
+    nl: {
+        nav: {
+            home: 'Home',
+            story: 'Onze Reis',
+            details: 'Details',
+            parking: 'Parkeren',
+            program: 'Programma',
+            rsvp: 'RSVP',
+            faq: 'Veelgestelde Vragen'
+        },
+        hero: {
+            message1: '🐾 3 huisdieren',
+            message2: '🏠 4 woningen',
+            message3: '✈️ 10+ vakanties',
+            message4: '💕 4000+ dagen',
+            message5: 'later...'
+        },
+        story: {
+            title: 'Onze Reis'
+        },
+        details: {
+            title: 'en nu is het tijd in het huwelijksbootje stappen!',
+            date: {
+                label: 'Datum',
+                value: 'Zaterdag 5 juni 2026'
+            },
+            time: {
+                label: 'Tijd',
+                value: '14:30 - 23:59'
+            },
+            venue: {
+                label: 'Locatie'
+            },
+            address: {
+                label: 'Adres',
+                mapLink: 'Bekijk op kaart'
+            }
+        },
+        parking: {
+            title: 'Parkeren',
+            description: 'Er is gratis parkeren voor De Volière. Als deze vol is, zijn er voldoende betaalde (voor een klein tarief) parkeerplaatsen na de slagboom.',
+            easy: {
+                title: 'Gemakkelijke Toegang',
+                description: 'De parkeerplaats bevindt zich direct bij de locatie.'
+            },
+            plenty: {
+                title: 'Ruim Voldoende Plaats',
+                description: 'Geen zorgen over het vinden van een plek - er is ruimte voor iedereen.'
+            }
+        },
+        program: {
+            title: 'Programma',
+            reception: {
+                title: 'Receptie',
+                description: 'Aankomst en welkomstdrankje'
+            },
+            ceremony: {
+                title: 'Ceremonie',
+                description: 'Huwelijksceremonie'
+            },
+            pictures: {
+                title: 'Fototijd',
+                description: 'Tijd voor foto\'s'
+            },
+            cocktails: {
+                title: 'Cocktails',
+                description: 'Drankjes en gezelligheid'
+            },
+            dinner: {
+                title: 'Diner & Feest',
+                description: 'Diner, dansen en feesten tot 23:59'
+            }
+        },
+        rsvp: {
+            subtitle: 'Gelieve te reageren vóór 29 maart 2026'
+        },
+        faq: {
+            title: 'Veelgestelde Vragen',
+            dresscode: {
+                question: 'Wat moet ik dragen?',
+                answer: 'Dresscode is zomer chic. Denk aan netjes maar comfortabel!'
+            },
+            plusone: {
+                question: 'Mag ik iemand meenemen?',
+                answer: 'Vanwege de beperkte capaciteit van de locatie kunnen we alleen formeel uitgenodigde gasten ontvangen. Bedankt voor uw begrip.'
+            },
+            dietary: {
+                question: 'Hoe zit het met dieetwensen?',
+                answer: 'Laat ons weten als u dieetwensen heeft wanneer u RSVP\'t.'
+            },
+            accommodation: {
+                question: 'Is er accommodatie in de buurt?',
+                answer: 'We hebben een lijst met aanbevolen hotels in de omgeving. Neem contact met ons op voor suggesties!'
+            }
+        },
+        footer: {
+            copyright: '© 2026 JJ Bruiloft. Gemaakt met ❤️'
+        }
+    },
+    en: {
+        nav: {
+            home: 'Home',
+            story: 'Our Journey',
+            details: 'Details',
+            parking: 'Parking',
+            program: 'Program',
+            rsvp: 'RSVP',
+            faq: 'Q&A'
+        },
+        hero: {
+            message1: '🐾 3 pets',
+            message2: '🏠 4 homes',
+            message3: '✈️ 10+ holidays',
+            message4: '💕 4000+ days',
+            message5: 'later...'
+        },
+        story: {
+            title: 'Our Journey'
+        },
+        details: {
+            title: 'and now it\'s time to tie the knot!',
+            date: {
+                label: 'Date',
+                value: 'Saturday, June 5th, 2026'
+            },
+            time: {
+                label: 'Time',
+                value: '14:30 - 23:59'
+            },
+            venue: {
+                label: 'Venue'
+            },
+            address: {
+                label: 'Address',
+                mapLink: 'View on Map'
+            }
+        },
+        parking: {
+            title: 'Parking',
+            description: 'There is free parking in front of De Volière. If this is full, there are plenty parking spots after you pass the barrier for a small fee.',
+            easy: {
+                title: 'Easy Access',
+                description: 'The parking area is conveniently located right at the venue.'
+            },
+            plenty: {
+                title: 'Plenty of Space',
+                description: 'No need to worry about finding a spot - there\'s room for everyone.'
+            }
+        },
+        program: {
+            title: 'Program',
+            reception: {
+                title: 'Reception',
+                description: 'Arrival and welcome drinks'
+            },
+            ceremony: {
+                title: 'Ceremony',
+                description: 'Wedding ceremony'
+            },
+            pictures: {
+                title: 'Picture time',
+                description: 'Time to take pictures'
+            },
+            cocktails: {
+                title: 'Cocktails',
+                description: 'Drinks and mingling'
+            },
+            dinner: {
+                title: 'Dinner & Party',
+                description: 'Dinner, dancing and celebration until 23:00'
+            }
+        },
+        rsvp: {
+            subtitle: 'Please respond by March 29th, 2026'
+        },
+        faq: {
+            title: 'Frequently Asked Questions',
+            dresscode: {
+                question: 'What should I wear?',
+                answer: 'Dresscode is summer chic. Think dressy but comfortable!'
+            },
+            plusone: {
+                question: 'Can I bring a plus one?',
+                answer: 'Due to venue limitations, we are only able to accommodate those guests formally invited. Thank you for understanding.'
+            },
+            dietary: {
+                question: 'What about dietary restrictions?',
+                answer: 'Please let us know about any dietary restrictions when you RSVP.'
+            },
+            accommodation: {
+                question: 'Is there accommodation nearby?',
+                answer: 'We have a list of recommended hotels in the area. Contact us for suggestions!'
+            }
+        },
+        footer: {
+            copyright: '© 2026 JJ Wedding. Made with ❤️'
+        }
+    }
+};
+
+// Language Management
+let currentLanguage = 'nl'; // Default to Dutch
+
+// Get nested translation value
+function getTranslation(key, lang) {
+    const keys = key.split('.');
+    let value = translations[lang];
+    for (const k of keys) {
+        value = value[k];
+        if (!value) return key; // Fallback to key if translation not found
+    }
+    return value;
+}
+
+// Update page language
+function updateLanguage(lang) {
+    currentLanguage = lang;
+
+    // Save to localStorage
+    localStorage.setItem('preferredLanguage', lang);
+
+    // Update all elements with data-lang-key
+    document.querySelectorAll('[data-lang-key]').forEach(element => {
+        const key = element.getAttribute('data-lang-key');
+        element.textContent = getTranslation(key, lang);
+    });
+
+    // Update active button
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
+    });
+
+    // Update html lang attribute
+    document.documentElement.lang = lang;
+}
+
+// Initialize language on page load
+function initializeLanguage() {
+    // Try to get saved language, fallback to Dutch
+    const savedLanguage = localStorage.getItem('preferredLanguage') || 'nl';
+    updateLanguage(savedLanguage);
+
+    // Set up language switcher buttons
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const lang = btn.getAttribute('data-lang');
+            updateLanguage(lang);
+        });
+    });
+}
+
 // Smooth scrolling for navigation links
 document.addEventListener('DOMContentLoaded', function() {
+    // Initialize language system
+    initializeLanguage();
     // Animated Messages in Hero Section
     const messageElements = [
         document.getElementById('message1'),

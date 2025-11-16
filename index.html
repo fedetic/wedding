@@ -12,32 +12,40 @@
 <body>
     <nav class="navbar">
         <ul class="nav-links">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#story">Our Journey</a></li>
-            <li><a href="#details">Details</a></li>
-            <li><a href="#parking">Parking</a></li>
-            <li><a href="#program">Program</a></li>
-            <li><a href="#rsvp">RSVP</a></li>
-            <li><a href="#faq">Q&A</a></li>
+            <li><a href="#home" data-lang-key="nav.home">Home</a></li>
+            <li><a href="#story" data-lang-key="nav.story">Our Journey</a></li>
+            <li><a href="#details" data-lang-key="nav.details">Details</a></li>
+            <li><a href="#parking" data-lang-key="nav.parking">Parking</a></li>
+            <li><a href="#program" data-lang-key="nav.program">Program</a></li>
+            <li><a href="#rsvp" data-lang-key="nav.rsvp">RSVP</a></li>
+            <li><a href="#faq" data-lang-key="nav.faq">Q&A</a></li>
         </ul>
+        <div class="language-switcher">
+            <button class="lang-btn" data-lang="nl">
+                <img src="icons/nl.png" alt="Nederlands">
+            </button>
+            <button class="lang-btn" data-lang="en">
+                <img src="icons/uk.png" alt="English">
+            </button>
+        </div>
     </nav>
 
     <main>
         <section id="home" class="hero">
             <div class="hero-content">
                 <div class="animated-messages">
-                    <div class="message-line" id="message1">🐾 3 pets</div>
-                    <div class="message-line" id="message2">🏠 4 homes</div>
-                    <div class="message-line" id="message3">✈️ 10+ holidays</div>
-                    <div class="message-line" id="message4">💕 4000+ days</div>
-                    <div class="message-line" id="message5">later...</div>
+                    <div class="message-line" id="message1" data-lang-key="hero.message1">🐾 3 pets</div>
+                    <div class="message-line" id="message2" data-lang-key="hero.message2">🏠 4 homes</div>
+                    <div class="message-line" id="message3" data-lang-key="hero.message3">✈️ 10+ holidays</div>
+                    <div class="message-line" id="message4" data-lang-key="hero.message4">💕 4000+ days</div>
+                    <div class="message-line" id="message5" data-lang-key="hero.message5">later...</div>
                 </div>
             </div>
         </section>
 
         <section id="story" class="photo-carousel-section">
             <div class="container">
-                <h2>Our Journey</h2>
+                <h2 data-lang-key="story.title">Our Journey</h2>
                 <div class="photo-slideshow" id="photoSlideshow">
                     <div class="slideshow-viewport">
                         <div class="slideshow-track" id="slideshowTrack">
@@ -145,24 +153,24 @@
 
         <section id="details" class="details-section">
             <div class="container">
-                <h2 class="animated-title" id="knotTitle">and now it's time to tie the knot! </h2>
+                <h2 class="animated-title" id="knotTitle" data-lang-key="details.title">and now it's time to tie the knot! </h2>
                 <div class="details-grid">
                     <div class="detail-item">
-                        <h3>Date</h3>
-                        <p>Saturday, June 5th, 2026</p>
+                        <h3 data-lang-key="details.date.label">Date</h3>
+                        <p data-lang-key="details.date.value">Saturday, June 5th, 2026</p>
                     </div>
                     <div class="detail-item">
-                        <h3>Time</h3>
-                        <p>14:30 - 23:59</p>
+                        <h3 data-lang-key="details.time.label">Time</h3>
+                        <p data-lang-key="details.time.value">14:30 - 23:59</p>
                     </div>
                     <div class="detail-item">
-                        <h3>Venue</h3>
+                        <h3 data-lang-key="details.venue.label">Venue</h3>
                         <p>De Volière</p>
                     </div>
                     <div class="detail-item">
-                        <h3>Address</h3>
+                        <h3 data-lang-key="details.address.label">Address</h3>
                         <p>Duinschooten 12, 2211 ZC Noordwijkerhout</p>
-                        <a href="https://maps.app.goo.gl/uBU6QvqiXGHJmLGE9" target="_blank" class="map-link">View on Map</a>
+                        <a href="https://maps.app.goo.gl/uBU6QvqiXGHJmLGE9" target="_blank" class="map-link" data-lang-key="details.address.mapLink">View on Map</a>
                     </div>
                 </div>
             </div>
@@ -170,17 +178,17 @@
 
         <section id="parking" class="parking-section">
             <div class="container">
-                <h2>Parking</h2>
+                <h2 data-lang-key="parking.title">Parking</h2>
                 <div class="parking-content">
-                    <p>There is free parking in front of De Volière. If this is full, there are plenty parking spots after you pass the barrier for a small fee.</p>
+                    <p data-lang-key="parking.description">There is free parking in front of De Volière. If this is full, there are plenty parking spots after you pass the barrier for a small fee.</p>
                     <div class="parking-details">
                         <div class="parking-item">
-                            <h3>Easy Access</h3>
-                            <p>The parking area is conveniently located right at the venue.</p>
+                            <h3 data-lang-key="parking.easy.title">Easy Access</h3>
+                            <p data-lang-key="parking.easy.description">The parking area is conveniently located right at the venue.</p>
                         </div>
                         <div class="parking-item">
-                            <h3>Plenty of Space</h3>
-                            <p>No need to worry about finding a spot - there's room for everyone.</p>
+                            <h3 data-lang-key="parking.plenty.title">Plenty of Space</h3>
+                            <p data-lang-key="parking.plenty.description">No need to worry about finding a spot - there's room for everyone.</p>
                         </div>
                     </div>
                 </div>
@@ -189,41 +197,41 @@
 
         <section id="program" class="program-section">
             <div class="container">
-                <h2>Program</h2>
+                <h2 data-lang-key="program.title">Program</h2>
                 <div class="timeline">
                     <div class="timeline-item">
                         <div class="timeline-time">14:30</div>
                         <div class="timeline-content">
-                            <h3>Reception</h3>
-                            <p>Arrival and welcome drinks</p>
+                            <h3 data-lang-key="program.reception.title">Reception</h3>
+                            <p data-lang-key="program.reception.description">Arrival and welcome drinks</p>
                         </div>
                     </div>
                     <div class="timeline-item">
                         <div class="timeline-time">15:00</div>
                         <div class="timeline-content">
-                            <h3>Ceremony</h3>
-                            <p>Wedding ceremony</p>
+                            <h3 data-lang-key="program.ceremony.title">Ceremony</h3>
+                            <p data-lang-key="program.ceremony.description">Wedding ceremony</p>
                         </div>
                     </div>
                     <div class="timeline-item">
                         <div class="timeline-time">15:40</div>
                         <div class="timeline-content">
-                            <h3>Picture time</h3>
-                            <p>Time to take pictures</p>
+                            <h3 data-lang-key="program.pictures.title">Picture time</h3>
+                            <p data-lang-key="program.pictures.description">Time to take pictures</p>
                         </div>
                     </div>
                     <div class="timeline-item">
                         <div class="timeline-time">16:30</div>
                         <div class="timeline-content">
-                            <h3>Cocktails</h3>
-                            <p>Drinks and mingling</p>
+                            <h3 data-lang-key="program.cocktails.title">Cocktails</h3>
+                            <p data-lang-key="program.cocktails.description">Drinks and mingling</p>
                         </div>
                     </div>
                     <div class="timeline-item">
                         <div class="timeline-time">18:00</div>
                         <div class="timeline-content">
-                            <h3>Dinner & Party</h3>
-                            <p>Dinner, dancing and celebration until 23:00</p>
+                            <h3 data-lang-key="program.dinner.title">Dinner & Party</h3>
+                            <p data-lang-key="program.dinner.description">Dinner, dancing and celebration until 23:59</p>
                         </div>
                     </div>
                 </div>
@@ -233,7 +241,7 @@
         <section id="rsvp" class="rsvp-section">
             <div class="container">
                 <h2>RSVP</h2>
-                <p class="rsvp-subtitle">Please respond by March 29th, 2026</p>
+                <p class="rsvp-subtitle" data-lang-key="rsvp.subtitle">Please respond by March 29th, 2026</p>
                 <div class="rsvp-form-container">
                     <iframe
                         src="https://docs.google.com/forms/d/e/1FAIpQLSeeSb6iAPgKBtK6CqAQm3zlOZ1IkvcKvk-mxC100pBpu3dwZQ/viewform?embedded=true"
@@ -252,23 +260,23 @@
         
         <section id="faq" class="faq-section">
             <div class="container">
-                <h2>Frequently Asked Questions</h2>
+                <h2 data-lang-key="faq.title">Frequently Asked Questions</h2>
                 <div class="faq-grid">
                     <div class="faq-item">
-                        <h3>What should I wear?</h3>
-                        <p>Dresscode is summer chic. Think dressy but comfortable!</p>
+                        <h3 data-lang-key="faq.dresscode.question">What should I wear?</h3>
+                        <p data-lang-key="faq.dresscode.answer">Dresscode is summer chic. Think dressy but comfortable!</p>
                     </div>
                     <div class="faq-item">
-                        <h3>Can I bring a plus one?</h3>
-                        <p>Due to venue limitations, we are only able to accommodate those guests formally invited. Thank you for understanding.</p>
+                        <h3 data-lang-key="faq.plusone.question">Can I bring a plus one?</h3>
+                        <p data-lang-key="faq.plusone.answer">Due to venue limitations, we are only able to accommodate those guests formally invited. Thank you for understanding.</p>
                     </div>
                     <div class="faq-item">
-                        <h3>What about dietary restrictions?</h3>
-                        <p>Please let us know about any dietary restrictions when you RSVP.</p>
+                        <h3 data-lang-key="faq.dietary.question">What about dietary restrictions?</h3>
+                        <p data-lang-key="faq.dietary.answer">Please let us know about any dietary restrictions when you RSVP.</p>
                     </div>
                     <div class="faq-item">
-                        <h3>Is there accommodation nearby?</h3>
-                        <p>We have a list of recommended hotels in the area. Contact us for suggestions!</p>
+                        <h3 data-lang-key="faq.accommodation.question">Is there accommodation nearby?</h3>
+                        <p data-lang-key="faq.accommodation.answer">We have a list of recommended hotels in the area. Contact us for suggestions!</p>
                     </div>
                 </div>
             </div>
@@ -278,7 +286,7 @@
 
     <footer>
         <div class="container">
-            <p>&copy; 2026 JJ Wedding. Made with ❤️</p>
+            <p data-lang-key="footer.copyright">&copy; 2026 JJ Wedding. Made with ❤️</p>
         </div>
     </footer>
 
