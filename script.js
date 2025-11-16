@@ -190,6 +190,48 @@ document.addEventListener('DOMContentLoaded', function() {
                 this.updateSlidePosition();
                 this.updateIndicators();
             });
+
+            // Touch/swipe support
+            this.setupTouchEvents();
+        },
+
+        setupTouchEvents() {
+            let touchStartX = 0;
+            let touchEndX = 0;
+            let touchStartY = 0;
+            let touchEndY = 0;
+
+            const viewport = this.slideshow.querySelector('.slideshow-viewport');
+
+            viewport.addEventListener('touchstart', (e) => {
+                touchStartX = e.changedTouches[0].screenX;
+                touchStartY = e.changedTouches[0].screenY;
+                this.stopAutoAdvance();
+            }, { passive: true });
+
+            viewport.addEventListener('touchend', (e) => {
+                touchEndX = e.changedTouches[0].screenX;
+                touchEndY = e.changedTouches[0].screenY;
+                this.handleSwipe(touchStartX, touchEndX, touchStartY, touchEndY);
+                this.startAutoAdvance();
+            }, { passive: true });
+        },
+
+        handleSwipe(startX, endX, startY, endY) {
+            const diffX = startX - endX;
+            const diffY = startY - endY;
+            const threshold = 50; // Minimum distance for a swipe
+
+            // Check if horizontal swipe is more significant than vertical
+            if (Math.abs(diffX) > Math.abs(diffY) && Math.abs(diffX) > threshold) {
+                if (diffX > 0) {
+                    // Swiped left - go to next slide
+                    this.nextSlide();
+                } else {
+                    // Swiped right - go to previous slide
+                    this.previousSlide();
+                }
+            }
         },
 
         goToSlide(index) {
