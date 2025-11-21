@@ -24,7 +24,7 @@ const translations = {
             title: 'en nu tijd om in het huwelijksbootje stappen!',
             date: {
                 label: 'Datum',
-                value: 'Zaterdag 5 juni 2026'
+                value: 'Vrijdag 5 juni 2026'
             },
             time: {
                 label: 'Tijd',
@@ -123,7 +123,7 @@ const translations = {
             title: 'and now it\'s time to tie the knot!',
             date: {
                 label: 'Date',
-                value: 'Saturday, June 5th, 2026'
+                value: 'Friday, June 5th, 2026'
             },
             time: {
                 label: 'Time',
@@ -407,8 +407,6 @@ document.addEventListener('DOMContentLoaded', function() {
         currentIndex: 0,
         autoAdvanceTimer: null,
         autoAdvanceDelay: 2500,
-        fastAdvanceDelay: 1000, // Faster speed for 4th photo
-        fastSlideIndex: 3, // Index of slide to advance quickly (4th slide)
 
         init() {
             if (!this.slideshow || this.slides.length === 0) return;
@@ -539,17 +537,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
         startAutoAdvance() {
             this.stopAutoAdvance();
-
-            // Use faster delay for 4th photo (index 3), normal delay for all others
-            const delay = this.currentIndex === this.fastSlideIndex
-                ? this.fastAdvanceDelay
-                : this.autoAdvanceDelay;
-
-            console.log('Starting auto-advance with', delay, 'ms delay (index:', this.currentIndex, ')');
             this.autoAdvanceTimer = setInterval(() => {
-                console.log('Auto-advancing to next slide');
                 this.nextSlide();
-            }, delay);
+            }, this.autoAdvanceDelay);
         },
 
         stopAutoAdvance() {
