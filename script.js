@@ -169,7 +169,7 @@ const translations = {
             },
             dinner: {
                 title: 'Dinner & Party',
-                description: 'Dinner, dancing and celebration until 23:00'
+                description: 'Dinner, dancing and celebration until 23:59'
             }
         },
         rsvp: {
