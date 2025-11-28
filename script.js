@@ -21,7 +21,7 @@ const translations = {
             title: 'Onze Reis'
         },
         details: {
-            title: 'en nu tijd om in het huwelijksbootje stappen!',
+            title: 'en nu tijd om in het huwelijksbootje te stappen!',
             date: {
                 label: 'Datum',
                 value: 'Vrijdag 5 juni 2026'
@@ -80,11 +80,11 @@ const translations = {
             title: 'Veelgestelde Vragen',
             dresscode: {
                 question: 'Wat moet ik dragen?',
-                answer: 'Dresscode is zomer chic. Denk aan netjes maar comfortabel!'
+                answer: 'Dresscode is zomer chic. Denk aan zomerse luchtigheid met een nette, stijlvolle uitstraling! We verzoeken onze gasten vriendelijk om geen rood of wit te dragen.'
             },
             plusone: {
                 question: 'Mag ik iemand meenemen?',
-                answer: 'Vanwege de beperkte capaciteit van de locatie kunnen we alleen formeel uitgenodigde gasten ontvangen. Bedankt voor uw begrip.'
+                answer: 'Vanwege de beperkte capaciteit van de locatie kunnen we alleen formeel uitgenodigde gasten ontvangen. Dank voor uw begrip.'
             },
             dietary: {
                 question: 'Hoe zit het met dieetwensen?',
@@ -179,7 +179,7 @@ const translations = {
             title: 'Frequently Asked Questions',
             dresscode: {
                 question: 'What should I wear?',
-                answer: 'Dresscode is summer chic. Think dressy but comfortable!'
+                answer: 'Dresscode is summer chic. Think dressy but comfortable! We kindly request our guests not to wear red or white.'
             },
             plusone: {
                 question: 'Can I bring a plus one?',
